@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	
+	<!-- 
+		component-scan 태그 - context 네임스페이스 추가.
+		 역할 - 1. Annotation으로 bean 설정한 클래스들을 scan해서 (찾아서) bean으로 등록 - <bean>태그 역할
+		 	  2. 의존관계 주입 설정 Annotation(@Autowired, @Resource) 설정에 맞게 의존객체 주입 처리.
+		 속성 : base-package (필수) - Annotation으로 bean 설정한 클래스들을 찾을 기본 package 지정 (지정한 패키지와 그 하위패키지들을 스캔한다.)
+		 							스캔할 패키지가 여러개인 경우 ',' 로 구분해서 설정한다.
+	 -->
+	
+	<context:component-scan base-package="spring.service,spring.dao"/>
+</beans>
